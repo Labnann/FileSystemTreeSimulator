@@ -9,17 +9,6 @@ public class Folder extends FileSystemElement implements ClickableInnerNode {
         super(name,type);
     }
 
-    @Override
-    public String getData() {
-        StringBuilder constructedData = new StringBuilder(super.name + " : [ ");
-        for(ClickableNode clickableNode : clickableNodeList){
-            constructedData.append(clickableNode.getData()).append(" ; ");
-        }
-
-        constructedData.append(" .. ] ");
-
-        return constructedData.toString();
-    }
 
     @Override
     public void add(ClickableNode clickableNode) {
