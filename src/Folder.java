@@ -13,12 +13,12 @@ public class Folder implements InnerNode{
 
     @Override
     public String getData() {
-        StringBuilder constructedData = new StringBuilder(this.data + " [ ");
+        StringBuilder constructedData = new StringBuilder(this.data + " : [ ");
         for(Node node: nodeList){
             constructedData.append(node.getData()).append(" , ");
         }
 
-        constructedData.append(" ] ");
+        constructedData.append(" .. ] ");
 
         return constructedData.toString();
     }
