@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Folder extends FileSystemElement implements ClickableInnerNode {
 
-    List<ClickableNode> clickableNodeList = new ArrayList<>();
+public class Folder extends FileSystemEntity implements ExpandableElement {
+
+    List<FileSystemElement> fileSystemElements = new ArrayList<>();
 
     Folder(String  name, String type){
         super(name,type);
@@ -11,13 +12,13 @@ public class Folder extends FileSystemElement implements ClickableInnerNode {
 
 
     @Override
-    public void add(ClickableNode clickableNode) {
-        clickableNodeList.add(clickableNode);
+    public void add(FileSystemElement fileSystemElement) {
+        fileSystemElements.add(fileSystemElement);
     }
 
     @Override
-    public void remove(ClickableNode clickableNode) {
-        clickableNodeList.remove(clickableNode);
+    public void remove(FileSystemElement fileSystemElement) {
+        fileSystemElements.remove(fileSystemElement);
     }
 
 
@@ -25,8 +26,8 @@ public class Folder extends FileSystemElement implements ClickableInnerNode {
     public void doubleClick() {
         System.out.println(super.name +" Folder is opened.");
         System.out.println("Contents: ");
-        for(ClickableNode clickableNode: clickableNodeList){
-            System.out.println(clickableNode.getData());
+        for(FileSystemElement fileSystemElement: fileSystemElements){
+            System.out.println(fileSystemElement.getData());
         }
     }
 }

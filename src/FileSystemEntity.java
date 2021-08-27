@@ -1,13 +1,13 @@
-public abstract class FileSystemElement implements ClickableNode {
+public abstract class FileSystemEntity implements FileSystemElement {
     String name;
     String type;
 
-    FileSystemElement(String name, String type) {
+    FileSystemEntity(String name, String type) {
         this.name = name;
         this.type = type;
     }
 
-    @Override
+
     public String getData() {
         return ("Name: " + this.name + ", Type: " + this.type);
     }

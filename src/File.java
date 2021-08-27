@@ -1,4 +1,4 @@
-public class File extends FileSystemElement {
+public class File extends FileSystemEntity {
 
 
     File(String name, String type) {
