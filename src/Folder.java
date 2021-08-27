@@ -23,6 +23,7 @@ public class Folder extends FileSystemElement implements ClickableInnerNode {
 
     @Override
     public void doubleClick() {
+        System.out.println(super.name +" Folder is opened.");
         System.out.println("Contents: ");
         for(ClickableNode clickableNode: clickableNodeList){
             System.out.println(clickableNode.getData());

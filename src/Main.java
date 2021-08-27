@@ -19,7 +19,8 @@ public class Main {
 
         projectFolder.add(new File("start.exe","Executable"));
 
-        System.out.println(projectFolder.getData());
+        projectFolder.singleClick();
+        projectFolder.doubleClick();
     }
 }
 
