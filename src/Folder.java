@@ -29,5 +29,6 @@ public class Folder extends FileSystemEntity implements ExpandableElement {
         for(FileSystemElement fileSystemElement: fileSystemElements){
             System.out.println(fileSystemElement.getData());
         }
+        System.out.println();
     }
 }

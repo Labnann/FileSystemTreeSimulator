@@ -9,6 +9,7 @@ public class File extends FileSystemEntity {
     @Override
     public void doubleClick() {
         System.out.println(this.name + "is opened");
+        System.out.println();
     }
 }
 

@@ -16,6 +16,7 @@ public abstract class FileSystemEntity implements FileSystemElement {
     @Override
     public void singleClick() {
         System.out.println("Name: " + this.name + ", Type: " + this.type);
+        System.out.println();
     }
 
     public abstract void doubleClick();

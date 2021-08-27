@@ -1,26 +1,48 @@
 public class Main {
     public static void main(String[] args) {
-        FileSystemElement readmeFile = new File("readme.md","MarkDown");
-        FileSystemElement configFile = new File("config.ts","TypeScript");
-        ExpandableElement projectFolder = new Folder("Project","Folder");
-        projectFolder.add(readmeFile);
 
-        ExpandableElement mainFolder = new Folder("Main","Folder");
-        projectFolder.add(mainFolder);
 
-        mainFolder.add(new File("data1.ts","Typescript"));
-        mainFolder.add(new File("Data2.ts","Typescript"));
+        FileSystemElement strategy = new File("Strategy Pattern", "ppt");
+        FileSystemElement observer = new File("Observer Pattern", "pdf");
+        FileSystemElement midSyllabus = new File("Mid Syllabus", "doc");
+        FileSystemElement composite = new File("Composite Pattern", "ppt");
+        FileSystemElement finalSyllabus = new File("Final Syllabus", "pdf");
+        FileSystemElement assignment1 = new File("Assignment-1", "pdf");
+        FileSystemElement assignment2 = new File("Assignment-2", "pdf");
+        FileSystemElement readME = new File("readME", "text");
+        ExpandableElement midExam = new Folder("Mid Exam", "Folder");
+        ExpandableElement finalExam = new Folder("Final Exam", "Folder");
 
-        ExpandableElement mainSubFolder = new Folder("Extra","Typescript");
-        mainSubFolder.add(new File("SubFile1.fl","Fl"));
-        mainSubFolder.add(new File("SubFile2.fl","Fl"));
-        mainSubFolder.add(new File("SubFile3.fl","Fl"));
-        mainFolder.add(mainSubFolder);
+        ExpandableElement Lectures = new Folder("Lectures", "Folder");
+        ExpandableElement assignments = new Folder("Assignments", "Folder");
+        ExpandableElement designPattern = new Folder("Design Pattern", "Folder");
 
-        projectFolder.add(new File("start.exe","Executable"));
+        midExam.add(strategy);
+        midExam.add(observer);
+        midExam.singleClick();
+        midExam.doubleClick();
 
-        projectFolder.singleClick();
-        projectFolder.doubleClick();
+
+        midExam.add(midSyllabus);
+        finalExam.add(composite);
+        finalExam.add(finalSyllabus);
+        Lectures.add(midExam);
+        Lectures.add(finalExam);
+        assignments.add(assignment1);
+        assignments.add(assignment2);
+        designPattern.add(Lectures);
+        designPattern.add(readME);
+        designPattern.add(assignments);
+        designPattern.singleClick();
+
+
+        designPattern.doubleClick();
+
+
+        designPattern.remove(readME);
+        designPattern.doubleClick();
+
+
     }
 }
 
