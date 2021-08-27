@@ -1,23 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        Node readmeFile = new File("readme.md");
-        Node configFile = new File("config.ts");
-        InnerNode projectFolder = new Folder("Project");
-        projectFolder.addChild(readmeFile);
+        ClickableNode readmeFile = new File("readme.md","MarkDown");
+        ClickableNode configFile = new File("config.ts","TypeScript");
+        ClickableInnerNode projectFolder = new Folder("Project","Folder");
+        projectFolder.add(readmeFile);
 
-        InnerNode mainFolder = new Folder("Main");
-        projectFolder.addChild(mainFolder);
+        ClickableInnerNode mainFolder = new Folder("Main","Folder");
+        projectFolder.add(mainFolder);
 
-        mainFolder.addChild(new File("data1.ts"));
-        mainFolder.addChild(new File("Data2.ts"));
+        mainFolder.add(new File("data1.ts","Typescript"));
+        mainFolder.add(new File("Data2.ts","Typescript"));
 
-        InnerNode mainSubFolder = new Folder("Extra");
-        mainSubFolder.addChild(new File("SubFile1.fl"));
-        mainSubFolder.addChild(new File("SubFile2.fl"));
-        mainSubFolder.addChild(new File("SubFile3.fl"));
-        mainFolder.addChild(mainSubFolder);
+        ClickableInnerNode mainSubFolder = new Folder("Extra","Typescript");
+        mainSubFolder.add(new File("SubFile1.fl","Fl"));
+        mainSubFolder.add(new File("SubFile2.fl","Fl"));
+        mainSubFolder.add(new File("SubFile3.fl","Fl"));
+        mainFolder.add(mainSubFolder);
 
-        projectFolder.addChild(new File("start.exe"));
+        projectFolder.add(new File("start.exe","Executable"));
 
         System.out.println(projectFolder.getData());
     }

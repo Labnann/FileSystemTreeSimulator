@@ -1,21 +1,19 @@
-import org.w3c.dom.NodeList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Folder implements InnerNode{
+public class Folder implements ClickableInnerNode {
     private final String data;
-    List<Node> nodeList = new ArrayList<>();
+    List<ClickableNode> clickableNodeList = new ArrayList<>();
 
-    Folder(String  data){
-        this.data = data;
+    Folder(String  name, String type){
+        this.data = "Name: "+name+", Type: "+type;
     }
 
     @Override
     public String getData() {
         StringBuilder constructedData = new StringBuilder(this.data + " : [ ");
-        for(Node node: nodeList){
-            constructedData.append(node.getData()).append(" , ");
+        for(ClickableNode clickableNode : clickableNodeList){
+            constructedData.append(clickableNode.getData()).append(" ; ");
         }
 
         constructedData.append(" .. ] ");
@@ -24,12 +22,22 @@ public class Folder implements InnerNode{
     }
 
     @Override
-    public void addChild(Node node) {
-        nodeList.add(node);
+    public void add(ClickableNode clickableNode) {
+        clickableNodeList.add(clickableNode);
     }
 
     @Override
-    public void removeChild(Node node) {
-        nodeList.remove(node);
+    public void remove(ClickableNode clickableNode) {
+        clickableNodeList.remove(clickableNode);
+    }
+
+    @Override
+    public void singleClick() {
+
+    }
+
+    @Override
+    public void doubleClick() {
+
     }
 }

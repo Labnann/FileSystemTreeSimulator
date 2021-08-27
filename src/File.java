@@ -1,14 +1,26 @@
-public class File implements Node{
-    String data;
+public class File implements ClickableNode {
 
-    File(String data){
-        this.data = data;
+    String name;
+    String type;
+
+    File(String  name, String type){
+        this.name = name;
+        this.type = type;
     }
-
 
     @Override
     public String getData() {
-        return this.data;
+        return "Name: "+this.name+", Type: "+this.type;
+    }
+
+    @Override
+    public void singleClick() {
+        System.out.println();
+    }
+
+    @Override
+    public void doubleClick() {
+
     }
 }
 
